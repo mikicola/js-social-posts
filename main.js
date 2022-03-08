@@ -38,7 +38,8 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            // "image": null
+            "image": "https://unsplash.it/300/300?image=10"
         },
         "likes": 56,
         "created": "2021-04-03"
@@ -57,7 +58,6 @@ const posts = [
 ];
 
 
-console.log (posts)
 
 /*
 Ricreiamo un feed social aggiungendo al layout di base fornito, il nostro script JS in cui:
@@ -80,8 +80,8 @@ Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 const container = document.getElementById('container');
 
-console.log (posts[0].author.name)
-// ${posts[i]['imgage']}
+console.log(container)
+
 
 for (let i = 0; i < posts.length; i++) {
     createPost(i);
@@ -121,4 +121,5 @@ function createPost(i){
                 </div>            
             </div>
             `
+            container.innerHTML += code;
 }
