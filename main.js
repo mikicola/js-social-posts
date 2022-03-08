@@ -72,9 +72,6 @@ immagine (non tutti i post devono avere una immagine),
 numero di likes.
 
 Milestone 1 - Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
-
-Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
-Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 */
 
 
@@ -123,3 +120,36 @@ function createPost(i){
             `
             container.innerHTML += code;
 }
+
+/*
+Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+*/
+
+
+const likeBtn = document.querySelectorAll('.js-like-button')
+let likes = document.querySelector(".js-likes-counter");
+
+for (i = 0; i < likeBtn.length; i++) {
+    likeBtn[i].addEventListener('click', liked)
+}
+
+
+// per ora cambia colore al btn like TOFIX
+function liked() {
+    this.classList.toggle('like-button--liked');
+    likes.value = likes.value + 1;
+    likes.innerHTML = "Hello World";
+}
+
+
+// const likeBtn = document.querySelector(".likes__cta");
+// liked.preventDefault()
+
+// likeBtn.addEventListener("click", liked);
+
+// function liked() {
+//     this.classList.add('like-button--liked');
+//     likes.innerHTML = "Hello World";
+// //   likes.value = likes.value + 1;
+// }
